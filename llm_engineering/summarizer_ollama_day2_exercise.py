@@ -31,19 +31,19 @@ class Website:
 
 
 
-ed = Website("https://edwarddonner.com")
+ed = Website("https://github.com/ed-donner/llm_engineering")
 
 # Define our system prompt - you can experiment with this later, changing the last sentence to 'Respond in markdown in Spanish."
 
 system_prompt = "You are an assistant that analyzes the contents of a website \
-and provides a short summary, ignoring text that might be navigation related. \
+and provides a short summary that higlights the key things that I will learn from this website, ignoring text that might be navigation related. \
 Respond in markdown."
 
 def user_prompt_for(website):
     user_prompt = f"You are looking at a website titled {website.title}"
     user_prompt += "\nThe contents of this website is as follows; \
-please provide a short summary of this website in markdown. \
-If it includes news or announcements, then summarize these too.\n\n"
+please provide a short summary of this website in markdown that I can include as a README in a repo where I will store my code from the experiements/activities. \
+.\n\n"
     user_prompt += website.text
     return user_prompt
 
@@ -63,4 +63,4 @@ def summarize(url):
     return response['message']['content']
 
 
-print(summarize("https://edwarddonner.com"))
+print(summarize("https://github.com/ed-donner/llm_engineering"))
